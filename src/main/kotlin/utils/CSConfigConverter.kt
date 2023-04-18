@@ -28,8 +28,6 @@ class CSConfigConverter(source: String = "", dest: String = "") {
         } ?: File("./items_game.json")
     }
 
-    private val tab = "\t"
-
     fun run() {
         val json = JSONObject()
         val keyChain = Stack<String>()
