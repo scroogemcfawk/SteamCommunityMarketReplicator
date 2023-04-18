@@ -9,7 +9,7 @@ import kotlin.Exception
 /**
  * Converts items_game.txt CS:GO config file to json format.
  */
-class CSConfigConverter(val opt: Options) {
+class CSConfigConverter {
     /**
      *  Class of CSConfigConverter options.
      *  @param source source file path
@@ -106,8 +106,4 @@ class CSConfigConverter(val opt: Options) {
             tar.printWriter().use { it.println(json.toString()) }
         }
     }
-}
-
-fun main() {
-    CSConfigConverter.run(CSConfigConverter.Options().setDefaultItemsOpts())
 }
