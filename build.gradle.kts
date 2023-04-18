@@ -11,4 +11,5 @@ plugins {
 
 dependencies {
     implementation("org.json:json:20230227")
+    implementation("net.sf.json-lib:json-lib:2.4:jdk15")
 }
