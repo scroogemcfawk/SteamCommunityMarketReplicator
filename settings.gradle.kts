@@ -1,2 +1,2 @@
-rootProject.name = "RePricerDBM"
+rootProject.name = "PriceStalkerDBM"
 

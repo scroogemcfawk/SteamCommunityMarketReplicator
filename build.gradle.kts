@@ -1,5 +1,5 @@
 group = "RePricer.dbm"
-version = "0.0.0"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -11,5 +11,4 @@ plugins {
 
 dependencies {
     implementation("org.json:json:20230227")
-    implementation("net.sf.json-lib:json-lib:2.4:jdk15")
 }
