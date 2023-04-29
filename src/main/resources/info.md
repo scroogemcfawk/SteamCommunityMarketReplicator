@@ -4,9 +4,10 @@ ___
 Converted ```items_game.json``` contains 
 every in-game item, including prefabs, rarities and colors, but most important are the following:
 > * ```items_game```: top level key
->   * ```item_sets```: list of containers
+>   * ```item_sets```: list of all skin collections
 >   * ```music_definitions```: list of music kits
->   * ```revolving_loot_lists```: all types of containers?
+>   * ```revolving_loot_lists```: sticker capsules, cases, souvenir packages, 
+>   music kit and other containers
 >   * ```paint_kits```: skins
 >   * ```sticker_kits```: stickers
 
@@ -19,6 +20,8 @@ ___
 ___
 > #### [Search on market](https://steamcommunity.com/market/search/render/)
 > Request market positions with >0 listings.
+> 
+> **Request:**
 > 
 > ```https://steamcommunity.com/market/search/render/[options]```
 > 
@@ -34,9 +37,19 @@ ___
 > * ```count```: count of positions (only in range ```1 <= x <= 100```)
 > * ```start```: skip x first positions, if x > positions - will skip everything
 > * ```search_descriptions```: no idea how it works 
+> 
+> **Response:**
+> 
+> * ```success```: status
+> * ```start```: same as request option
+> * ```page_size```
+> * ```total_count```: total count of all market positions at the moment
+> * ```results```: array of positions
 
 > #### [Icon](https://community.cloudflare.steamstatic.com/economy/image/)
 > Request Icon by ```icon_url``` with ```res``` resolution.
 > 
 > ```https://community.cloudflare.steamstatic.com/economy/image/[icon_url]/[res]fx[res]f```
+
+https://steamcommunity.com/market/itemordershistogram?country=PK&language=english&currency=1&item_nameid=176096390&two_factor=0&norender=1
 ___

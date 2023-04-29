@@ -16,7 +16,7 @@ class CSConfigConverter {
      *  @param target target file path
      *  @param encoding source file encoding
      */
-    data class Options(var source: String = "", var target: String = "", var encoding: Charset = Charsets.UTF_8) {
+    public class Options(var source: String = "", var target: String = "", var encoding: Charset = Charsets.UTF_8) {
         /**
          * Check if given paths exist.
          */
@@ -32,7 +32,7 @@ class CSConfigConverter {
         /**
          *  Set default options for items_game.txt source file.
          */
-        fun setDefaultItemsOpts(): Options {
+        public fun setDefaultItemsOpts(): Options {
             source = System.getenv("CSITEMS").replace("\\", "/").ifBlank { throw Exception("Environment variable \"CSITEMS\" not found.") }
             target = System.getProperty("user.dir").replace("\\", "/") + "/src/main/resources/temp/items_game.json"
             encoding = Charsets.UTF_8
@@ -43,7 +43,7 @@ class CSConfigConverter {
         /**
          *  Set default options for csgo_english.txt source file.
          */
-        fun setDefaultEnglishOpts(): Options {
+        public fun setDefaultEnglishOpts(): Options {
             source = System.getenv("CSENGLISH") ?: throw Exception("Environment variable \"CSENGLISH\" not found.")
             target = System.getProperty("user.dir") + "/src/main/resources/temp/csgo_english.json"
             encoding = Charsets.UTF_16
@@ -63,7 +63,7 @@ class CSConfigConverter {
             val keyChain = Stack<String>()
             var prevK = ""
             for (line in src.bufferedReader(opt.encoding).lines()) {
-                var trimmed = line.trim().split(" ", "\t", "\\n").filter { it.isNotBlank() }.joinToString(" ")
+                var trimmed = line.trim().lowercase().split(" ", "\t", "\\n").filter { it.isNotBlank() }.joinToString(" ")
                 while (trimmed.contains("\" ")) {
                     trimmed = trimmed.replace("\" ", "\"")
                 }
