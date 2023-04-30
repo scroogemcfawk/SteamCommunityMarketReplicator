@@ -9,6 +9,7 @@ import kotlin.Exception
 /**
  * Converts items_game.txt CS:GO config file to json format.
  */
+@Deprecated("Ambiguous setup.", replaceWith = ReplaceWith("VDFReader"))
 class CSConfigConverter {
     /**
      *  Class of CSConfigConverter options.

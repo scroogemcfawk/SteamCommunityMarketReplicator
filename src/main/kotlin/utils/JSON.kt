@@ -3,7 +3,8 @@ package utils
 import org.json.JSONObject
 
 /**
- * Returns JSONObject by applying .get(key) to this from keyChain one by one.
+ * @param keyChain order sensitive collection of keys to apply as a chain.
+ * @return [JSONObject] by applying get(key) to this from [keyChain] one by one.
  */
 fun JSONObject.getByKeyChain(keyChain: Collection<String>): JSONObject {
     var ret = this
