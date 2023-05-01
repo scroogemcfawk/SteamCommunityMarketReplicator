@@ -100,7 +100,8 @@ object VDFReader {
                         try {
                             // lowercase is needed, because the same keys can have different case in different files
                             val k = kv[0].drop(1).lowercase()
-                            val v = kv[1].dropLast(1)
+                            // the same for values with keys like "name" and "item_name"
+                            val v = if (k.contains("name")) kv[1].dropLast(1).lowercase() else kv[1].dropLast(1)
                             json.getByKeyChain(keyChain).accumulate(k, v)
                             prevK = k
                         } catch (_: Exception) {
