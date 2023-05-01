@@ -4,7 +4,8 @@
         "c": ["d", "e"],
         "f": {
             "c": "C",
-            "name": "uppercase"
+            "name": "#uppercase",
+            "item_name": "#camelcase"
         }
     }
 }

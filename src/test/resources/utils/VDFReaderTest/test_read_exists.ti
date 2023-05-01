@@ -7,7 +7,9 @@
 "f"
 {
 "C""C"
-            "NamE" "UPPERCASE"
+            "NamE" "#UPPERCASE"
+            "item_NAme""#CamelCase"
+
 
 }
 }
